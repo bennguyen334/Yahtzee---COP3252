@@ -6,7 +6,8 @@ import java.awt.event.*;
 public class GameTest {
 
     public static void main(String[] args) {
-        Frame frame = new JFrame("Yahtzee");
+        JFrame frame = new JFrame("Yahtzee");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         String players = JOptionPane.showInputDialog("How many players? (2-4)"); //JOptionPane to get player count
 
         if (players.equals("2")){ //if 2 player mode is selected
@@ -17,13 +18,32 @@ public class GameTest {
             frame.add(b);
 
             Player Player1 = new Player(), Player2 = new Player(); //create 2 player objects
+            }
+        
+        else if (players.equals("3")){ //if 2 player mode is selected
+             frame.setSize(500, 500); //the size here would be reflective to the amount of players
+            frame.setVisible(true);
+            JButton b=new JButton("Click Here"); //button that doesn't do anything just was testing it
+            b.setBounds(50,50,50,50);
+            frame.add(b);
+            Player Player1 = new Player(), Player2 = new Player(), Player3 = new Player(); //create 3 player objects
+            }
 
+        else if (players.equals("4")){ //if 2 player mode is selected
+            frame.setSize(500, 500); //the size here would be reflective to the amount of players
+            frame.setVisible(true);
+            JButton b=new JButton("Click Here"); //button that doesn't do anything just was testing it
+            b.setBounds(50,50,50,50);
+            frame.add(b);
+
+            Player Player1 = new Player(), Player2 = new Player(), Player3 = new Player(), Player4 = new Player() ; //create 4 player objects
+            }
+        
             Dice[] dice = new Dice[5]; //dice array of dice object
 
             for (int i = 0; i < dice.length; ++i){ //rolls each dice
                 dice[i] = new Dice();
                 dice[i].roll();
-            }
 
 
 
