@@ -9,6 +9,11 @@ public class GameTest {
         Frame frame = new JFrame("Yahtzee");
         String players = JOptionPane.showInputDialog("How many players? (2-4)"); //JOptionPane to get player count
 
+        if(players == null)
+        {
+	        System.exit(0);
+        }
+
         if (players.equals("2")){ //if 2 player mode is selected
             frame.setSize(500, 500); //the size here would be reflective to the amount of players
             frame.setVisible(true);
